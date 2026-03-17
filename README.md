@@ -7,3 +7,5 @@ La aplicación permitirá a los clientes armar su pedido de manera personalizada
 Por otro lado, el sistema ayudará al personal del restaurante a gestionar de forma eficiente las mesas, visualizando cuáles están ocupadas, disponibles o en proceso de atención. Además, permitirá organizar los pedidos de manera clara, agilizando la comunicación entre los meseros y la cocina.
 
 En general, esta aplicación busca mejorar la calidad del servicio, reducir tiempos de espera y optimizar la administración del restaurante mediante una solución tecnológica intuitiva y eficiente.
+
+![alt text](Pantallazo_Cliente-1.png) ![alt text](Pantallazo_Dueño-1.png) ![alt text](Pantallazo_Mesero-1.png)
