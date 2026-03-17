@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel de Mesas - Fudo Clone</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec7f13",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Header Section -->
+<header class="sticky top-0 z-30 bg-background-light dark:bg-background-dark border-b border-primary/10">
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">grid_view</span>
+<h1 class="text-xl font-bold tracking-tight">Salón Principal</h1>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">sync</span>
+</button>
+</div>
+</div>
+<!-- Search and Filters -->
+<div class="px-4 pb-3">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400">search</span>
+<input class="w-full bg-slate-100 dark:bg-primary/5 border-none rounded-xl py-2.5 pl-10 pr-4 focus:ring-2 focus:ring-primary text-sm" placeholder="Buscar mesa (ej: 12)..." type="text"/>
+</div>
+</div>
+<div class="flex px-4 gap-2 overflow-x-auto pb-3 no-scrollbar">
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-white text-sm font-medium">Todas</button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-100 dark:bg-primary/5 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-200 dark:border-primary/20">Disponibles</button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-100 dark:bg-primary/5 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-200 dark:border-primary/20">Ocupadas</button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-100 dark:bg-primary/5 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-200 dark:border-primary/20">Para Limpiar</button>
+</div>
+</header>
+<!-- Main Content: Tables Grid -->
+<main class="p-4 mb-24">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Available Table -->
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-green-500/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<div class="absolute top-2 right-2 flex gap-1">
+<span class="size-2 rounded-full bg-green-500"></span>
+</div>
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">01</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-green-600 mt-1">Disponible</p>
+<div class="mt-2 flex gap-1">
+<span class="material-symbols-outlined text-slate-400 text-sm">person</span>
+<span class="text-xs text-slate-400">4</span>
+</div>
+</div>
+<!-- Occupied Table with Timer -->
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-primary/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<div class="absolute top-2 right-2 flex gap-1">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">02</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-primary mt-1">00:42:15</p>
+<div class="mt-2 flex items-center gap-1 bg-primary/10 px-2 py-0.5 rounded text-primary">
+<span class="text-[10px] font-bold">$12.400</span>
+</div>
+</div>
+<!-- Dirty Table -->
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-red-500/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<div class="absolute top-2 right-2 flex gap-1">
+<span class="size-2 rounded-full bg-red-500"></span>
+</div>
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">03</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-red-600 mt-1">Sucia</p>
+<span class="material-symbols-outlined text-red-400 mt-1">cleaning_services</span>
+</div>
+<!-- Table Card Template (Repeated for Fill) -->
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-green-500/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">04</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-green-600 mt-1">Disponible</p>
+</div>
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-primary/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">05</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-primary mt-1">01:15:00</p>
+<div class="mt-2 flex items-center gap-1 bg-primary/10 px-2 py-0.5 rounded text-primary">
+<span class="text-[10px] font-bold">$8.200</span>
+</div>
+</div>
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-green-500/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">06</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-green-600 mt-1">Disponible</p>
+</div>
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-green-500/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">07</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-green-600 mt-1">Disponible</p>
+</div>
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-red-500/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">08</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-red-600 mt-1">Sucia</p>
+<span class="material-symbols-outlined text-red-400 mt-1">cleaning_services</span>
+</div>
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-primary/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">09</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-primary mt-1">02:05:22</p>
+<div class="mt-2 flex items-center gap-1 bg-primary/10 px-2 py-0.5 rounded text-primary">
+<span class="text-[10px] font-bold">$34.900</span>
+</div>
+</div>
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-green-500/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">10</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-green-600 mt-1">Disponible</p>
+</div>
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-primary/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">11</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-primary mt-1">00:15:10</p>
+</div>
+<div class="relative group aspect-square bg-white dark:bg-primary/5 rounded-xl border-2 border-green-500/30 flex flex-col items-center justify-center p-4 transition-all active:scale-95 shadow-sm">
+<span class="text-3xl font-bold text-slate-800 dark:text-slate-100">12</span>
+<p class="text-[10px] uppercase tracking-widest font-semibold text-green-600 mt-1">Disponible</p>
+</div>
+</div>
+</main>
+<!-- Quick Action Button -->
+<div class="fixed bottom-24 right-6 z-40">
+<button class="bg-primary hover:bg-primary/90 text-white size-14 rounded-full shadow-lg shadow-primary/40 flex items-center justify-center transition-transform active:scale-90">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-primary/20 z-50">
+<div class="flex items-center justify-around h-20 px-4">
+<a class="active-nav flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">table_restaurant</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Mesas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Pedidos</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">cooking</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Cocina</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Perfil</span>
+</a>
+</div>
+<!-- Safe area indicator for modern phones -->
+<div class="h-4 bg-transparent"></div>
+</nav>
+</body></html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec7f13",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-4 sticky top-0 z-10 justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg text-white">
+<span class="material-symbols-outlined">restaurant_menu</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Hoy en un vistazo</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="relative flex size-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+</div>
+</header>
+<main class="flex-1 pb-24">
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[160px] flex-1 flex-col gap-2 rounded-xl p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">payments</span>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium">Ventas Totales</p>
+</div>
+<p class="text-slate-900 dark:text-slate-100 tracking-tight text-2xl font-bold">$12,450.00</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-green-600 text-xs">trending_up</span>
+<p class="text-green-600 text-xs font-bold">+12.5% vs ayer</p>
+</div>
+</div>
+<div class="flex min-w-[160px] flex-1 flex-col gap-2 rounded-xl p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">receipt_long</span>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium">Pedidos</p>
+</div>
+<p class="text-slate-900 dark:text-slate-100 tracking-tight text-2xl font-bold">142</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-green-600 text-xs">trending_up</span>
+<p class="text-green-600 text-xs font-bold">+8.2%</p>
+</div>
+</div>
+<div class="flex min-w-[160px] flex-1 flex-col gap-2 rounded-xl p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">avg_time</span>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium">Ticket Promedio</p>
+</div>
+<p class="text-slate-900 dark:text-slate-100 tracking-tight text-2xl font-bold">$87.67</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-red-500 text-xs">trending_down</span>
+<p class="text-red-500 text-xs font-bold">-2.1%</p>
+</div>
+</div>
+</div>
+<section class="px-4 py-2">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Tendencia de Ventas</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Ventas en tiempo real por hora</p>
+</div>
+<div class="flex items-center gap-2 bg-background-light dark:bg-slate-800 p-1 rounded-lg">
+<button class="px-3 py-1 bg-white dark:bg-slate-700 shadow-sm rounded-md text-xs font-bold">Hoy</button>
+<button class="px-3 py-1 text-slate-500 text-xs font-bold">Ayer</button>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="h-[200px] w-full">
+<svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#sales_gradient)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#ec7f13" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="sales_gradient" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#ec7f13" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#ec7f13" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex justify-between px-2">
+<p class="text-slate-400 text-xs font-bold">08:00</p>
+<p class="text-slate-400 text-xs font-bold">12:00</p>
+<p class="text-slate-400 text-xs font-bold">16:00</p>
+<p class="text-slate-400 text-xs font-bold">20:00</p>
+<p class="text-slate-400 text-xs font-bold">00:00</p>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Top Productos</h3>
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-lg object-cover" data-alt="Hamburguesa clásica con queso y papas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0P6A73OlZ5GmDGyG-DaeepLwYW2zpnK56FPsUgT0bHmK-vuYW2zbS6wE6qMuUPihM1W8AixiD0klloW6Um5rI_7AgJi54sNIfZHgTuBzapSCvt8XMGquS4J_Nh1fjBJWdlZl0NK1rQoYY0iI5VdJW8Izyjg3QzMdwYC1jC3Y3pgWxAU8Vr91Wk8jblzzzV_FnbNboCvbrHDJe5oGIbDK1Y8Br8pfOTw5qQ_mqBTj7K4KvCX0TTKFGsk81eZrDpO2pi-7kf5cOr2Y"/>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Hamburguesa Clásica</p>
+<p class="text-xs text-slate-500">Categoría: Platos Fuertes</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">84 vendidos</p>
+<p class="text-xs text-green-600">+$2,100.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-lg object-cover" data-alt="Pizza artesanal con albahaca fresca" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvagQZYdpzvyufD-6B1j3Jd9EePQcEfCRYLa69G4m9PdEstP9KHHXUF5hPCsQxB8G0WvnfUphzQvp7lMcvuBHpHubtiApGR8kpv3qVCofT3TlKZ16yMKvlFI9CMUVh25ZRfiFDadKPdBB6fmAb3TRAnyVKDRsT6psDHm94b8bOAHOvTBoWgRpEgQiRPd8G-cB0UJOktDWprgf2WyRUaI32xM5Wc9bJgfpuDnWk39KASScfLy7xsVwPKJe7NinBhkGsMeHBeRZYkUM"/>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Pizza Margarita</p>
+<p class="text-xs text-slate-500">Categoría: Hornos</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">62 vendidos</p>
+<p class="text-xs text-green-600">+$1,550.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-lg object-cover" data-alt="Ensalada fresca con tomates cherry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB2zOi16Su4DoYVa5Dr5xUjcGL5HYTj64u8BRoVlXXh-BwMqYhBPaiWwRfoor-boXFswZaswu1hbhqy9lq1vI_hslSzdQWzsR3gj4tvbrrlzr_a8Tk0YZh6dvBKU6WK3JllYer0_SyyyfkiVU0K-pQgn5_c4XWB3Ped4nj8gWVn1YZIy2p0X1otZfU-GlqKsnEykdWUxXHNiCyN5hGVaZm44hMET1GBITLnMRD4-6bTmZGAKuieckpPSLDiZzDNjVN0LayLJKvnXg"/>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Ensalada César</p>
+<p class="text-xs text-slate-500">Categoría: Ensaladas</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">45 vendidos</p>
+<p class="text-xs text-green-600">+$675.00</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 text-primary text-sm font-bold border border-primary/20 rounded-lg hover:bg-primary/10 transition-colors">
+                        Ver informe completo
+                    </button>
+</section>
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-500">warning</span>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Alertas de Inventario</h3>
+</div>
+<span class="bg-red-100 dark:bg-red-900/30 text-red-600 text-xs font-bold px-2 py-1 rounded">3 Críticas</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 rounded-lg border border-slate-100 dark:border-slate-800 bg-background-light/50 dark:bg-slate-800/50">
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Pan de Hamburguesa</p>
+<p class="text-xs text-red-500 font-medium">Quedan 12 unidades</p>
+</div>
+<button class="bg-primary text-white text-xs px-3 py-1.5 rounded-lg font-bold">Reordenar</button>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-slate-100 dark:border-slate-800">
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Tomate Saladette</p>
+<p class="text-xs text-amber-500 font-medium">Quedan 5kg (Umbral 10kg)</p>
+</div>
+<button class="bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 text-xs px-3 py-1.5 rounded-lg font-bold">Gestionar</button>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-slate-100 dark:border-slate-800">
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Cerveza Nacional</p>
+<p class="text-xs text-amber-500 font-medium">Bajo stock en barra A</p>
+</div>
+<button class="bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 text-xs px-3 py-1.5 rounded-lg font-bold">Gestionar</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pb-3 pt-2 z-20">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 rounded-full text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</div>
+<p class="text-xs font-bold leading-normal">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<p class="text-xs font-medium leading-normal">Ventas</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<p class="text-xs font-medium leading-normal">Inventario</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<p class="text-xs font-medium leading-normal">Ajustes</p>
+</a>
+</nav>
+</div>
+</body></html>
